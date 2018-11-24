@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1477342408700_1" label="edu.wit.comp2000.application.adt3" name="edu.wit.comp2000.application.adt3"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1477860202303_2" label="Tin" name="Tin"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1475249005982_0" label="Window Working Set" name="Aggregate for window 1475249005982"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1477954030659_3" label="Window Working Set" name="Aggregate for window 1477954030659"/>
+<mruList name="Tin"/>
+<mruList name="edu.wit.comp2000.application.adt3"/>
+</workingSetManager>

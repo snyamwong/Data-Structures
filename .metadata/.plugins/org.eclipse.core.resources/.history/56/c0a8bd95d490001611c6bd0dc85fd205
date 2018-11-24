@@ -1,0 +1,115 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class calculator {
+	static Integer result = 0;
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		File file = new File("src/Infix Calculator Expressions - valid -- 2016-10-04 01.txt");
+
+		readFile(file);
+	}
+
+	private static void readFile(File file) throws FileNotFoundException {
+		Scanner fileScanner = new Scanner(file);
+		String line = "";
+
+		while (fileScanner.hasNextLine()) {
+			line = fileScanner.nextLine();
+			System.out.println("Line of .txt file - " + line);
+			addToStack(line);
+		}
+
+		fileScanner.close();
+	}
+
+	private static void addToStack(String eq) {
+		VectorStack<Integer> numbers = new VectorStack<>();
+		// Unfortunately ArrayStack does not allow you to use <char> because you
+		// can't put primitive type into generics...
+		VectorStack<Character> operations = new VectorStack<>();
+
+		for (int i = 0; i < eq.length(); i++) {
+			char index = eq.charAt(i);
+			
+			System.out.println("Character" + "(" + i + "): " + index);
+
+			//PLEASE IM BAMBOOZLED I FORGOT THESE WERE
+			//SUPPOSE TO BE ASCII
+			//P.S this works because numeric values are all greater than 48
+			//while signs/operations are all less than 48
+			
+			//before changes: if(index >= 0 && index <= 9)
+			//after changes...
+			
+			if (index >= 48 && index <= 57) {
+				Integer intIndex = Character.getNumericValue(index);
+				numbers.push(intIndex);
+			} 
+			else if (index == '(') {
+				operations.push(index);
+			} 
+			else if (index == '+' || index == '-' || index == '*' || index == '/') {
+				if (operations.isEmpty()) {
+					operations.push(index);
+				} else if (orderOfOperations(index) < orderOfOperations(operations.peek())) {
+					operations.push(index);
+				} else {
+					while (!operations.isEmpty() && orderOfOperations(index) <= orderOfOperations(operations.peek())) {
+
+						result = calculate(numbers.pop(), numbers.pop(), operations.pop());
+						numbers.push(result);
+					}
+					operations.pop();
+				}
+
+			} 
+			else if (index == ')') {
+				//line 21 in .txt has (3)
+				while (operations.peek() != '(') {
+					result = calculate(numbers.pop(), numbers.pop(), operations.pop());
+					numbers.push(result);
+				}
+			}
+		}
+
+		while (!operations.isEmpty()) {
+			result = calculate(numbers.pop(), numbers.pop(), operations.pop());
+			numbers.push(result);
+		}
+		
+		result = Integer.valueOf(numbers.peek());
+
+		System.out.println(result);
+	}
+
+	private static int orderOfOperations(Character index) {
+		switch (index) {
+		case '(':
+		case ')':
+			return 0;
+		case '+':
+		case '-':
+			return 1;
+		case '*':
+		case '/':
+			return 2;
+		default:
+			return 3;
+		}
+	}
+
+	private static Integer calculate(Integer numOne, Integer numTwo, Character operator) {
+		if (operator == '+') {
+			return (numOne + numTwo);
+		} else if (operator == '-') {
+			return (numTwo - numOne);
+		} else if (operator == '*') {
+			return (numOne * numTwo);
+		} else if (operator == '/') {
+			return (numTwo / numOne);
+		} else
+			return 0;
+	}
+}

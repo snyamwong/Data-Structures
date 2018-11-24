@@ -1,0 +1,66 @@
+package edu.wit.comp2000.group23.lists;
+
+import edu.wit.comp2000.group23.lists.Exceptions.EmptyDeckException;
+import edu.wit.comp2000.group23.lists.Utils.*;
+import java.util.*;
+
+public class War {
+
+	public static void main(String[] args) {
+		// Scanner object for user input
+
+		// deck instantiation and shuffle
+		Deck deck = new Deck();
+		deck.shuffle();
+		// instantiation of table for game logic
+		Table table = null;
+		// counter for counting rounds
+		int counter = 1;
+		// instantiates the players, min 2 - max 4
+		Player player1 = null;
+		Player player2 = null;
+
+		/*
+		 * do while loop that gets information regarding the number of players
+		 * playing instantiates 2 or 4 players based on numberOfPlayers value
+		 * creates table for 2 or 4 players
+		 */
+
+		System.out.println("Welcome to War");
+
+		player1 = new Player(1, new Hand(), new Pile());
+		player2 = new Player(2, new Hand(), new Pile());
+		table = new Table(player1, player2);
+
+		/*
+		 * Adds cards to players hands Handles both 2 and 4 players
+		 */
+
+		for (int i = 0; i < 26; i++) {
+			try {
+				player1.addToHand(deck.deal());
+				player2.addToHand(deck.deal());
+			} catch (EmptyDeckException e) {
+				// Try catch for EmptyDeckException
+				e.printStackTrace();
+			}
+		}
+
+		/*
+		 * Main game logic Round starts players put their cards down cards are
+		 * compared, whoever is the highest value adds to their pile when war
+		 * occurs, 3 cards get placed down, a 4th is compared to decide the
+		 * winner when all players besides 1 have 0 cards in hand and pile,
+		 * player X wins.
+		 */
+
+		while(true){
+			table.Sync();
+		}
+	}
+
+	public static void gameOver(Player p){
+		System.out.println("Player " + p.getplayerID() + " has won!");
+		System.exit(0);
+	}
+}

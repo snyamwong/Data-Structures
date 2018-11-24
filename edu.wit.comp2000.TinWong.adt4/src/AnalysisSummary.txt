@@ -1,0 +1,25 @@
+1). In general, how useful is the List data structure? Can you think of other uses 
+aside from those discussed in the application chapter?
+
+The List data structure is extremely useful. As an ordered data structure that allows
+the client to manipulate and access its entries, the uses are huge. From grocery lists,
+to to do lists, this data structure can be used to structure many of our daily lives
+data. 
+
+2). If we didn't have the List data structure can you think of another way to implement
+the ordered list concept?
+
+Nope, the ordered list concept is far too valuable. Unlike Stack and Queues, List does
+not restrict access to its entries. Unlike the Bag, the List is ordered. Not only does
+the List not restrict access to its entries, but the List also allows the client to 
+manipulate the entries. The List is a one of a kind data structure that screws in
+many of the concepts/data structure. 
+
+3). Can the List ADT accept/handle null entries? Why or why not?
+
+Yes, it can accept and handle null entries. In fact, in my main 
+method I added and removed a null entry. Therefore, the List ADT
+can accept and handle null entries. Why or why not is because
+it is a Linked implementation (with nodes), therefore it will be
+able to handle null entries as long as there's no 
+NullPointerException.

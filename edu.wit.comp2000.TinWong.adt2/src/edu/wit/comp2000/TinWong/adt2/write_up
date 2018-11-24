@@ -1,0 +1,24 @@
+Analysis
+
+1). The stack data structure is very useful, one application that uses stack is the calculator. 
+Any other application that uses Last In - First Out implementation will most likely use stacks.
+
+2). Perhaps you can use an ArrayList to store the values that you want, then reversing the order to make it 
+"last in first out".
+
+3). The Stack ADT accept and handle null entries, as the stack must make stack[index] into a null if you pop something out 
+(instead of erasing the entry completely). It can also accept null entries as the stack[index] takes in null entries. Since
+the stack uses an Array of generic T, it can accept and handle null entries. 
+
+Summary 
+
+1). I had a lot of trouble with this assignment. Most of it was very trivial matters, such as somehow mixing Queues into the program. 
+I moved forward simply emailing the professor and asked for assistance. Also some other trivial matters such as sorting the array, 
+where you have to move topIndex to a new location. Clear method as well, where I messed up on the assertion for a minute or two.
+My implementation for the most part was correct however, just mechanical errors mostly.
+
+2). I learned a lot from this assignment, especially implementing a Stack backwards. 
+While I have not implemented an algorithm like this into a program/application, it might come into use later. 
+The Stack ADT itself feels more detailed and I feel more knowledged in the topic than before.
+
+3). The assignment is fine the way it is right now, no need for changes.

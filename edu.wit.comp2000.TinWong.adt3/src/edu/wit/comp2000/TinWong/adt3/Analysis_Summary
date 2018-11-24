@@ -1,0 +1,33 @@
+Analysis
+
+1. In general, how useful is the Queue data structure?  Can you think of other uses aside from those discussed in the applications chapter?
+
+Queue data structure is extremely useful, considering we are using it for a train stimulation. Queues are used
+in a lot of real life situations, from cars in a toll ticket to ducks crossing a street. 
+
+2. If we didn’t have the Queue data structure can you think of another way to implement the FIFO (first in first out) concept? 
+
+No, like Stack - Queues restrict assess to its entries. However, it is FIFO whereas Stack is LIFO. Queue is a unique data structure where 
+no other data structure is like it. You can implement a List to behave similar to Queue, but you won't be able to restrict access to its entries
+
+3. Can the Queue ADT accept/handle null entries?  Why or why not? 
+
+Yes it can, when you dequeue an entry from the Queue, it makes the frontIndex of the queue a null. Therefore, it can handle null entries. It can also
+accept null entries, as it has a T parameter. 
+
+Summary
+
+1. Where did you have trouble with this assignment? How did you move forward? What topics still confuse you? 
+
+The only trouble I had with this assignment was a couple bug issues when I tried changing the value for backIndex in the constructor. I moved forward by simply
+fixing it by making it queue.length - 1, although that might not have been necessary. No topics still confuse me however.
+
+2. What did you learn from this assignment? (Please be specific) 
+
+The way a circular array works. It was the first time where I implement a circular array, and using frontIndex and backIndex at the same time. For previous assignments and projects
+I had always used a concurrent index, and keeping track of only the current index of the array. With the circular array, I had use the backIndex as I'm adding to the back of the array,
+and using the frontIndex only to getFront and dequeue.
+
+3. How could this assignment be improved in the future? 
+
+This assignment is fine the way it is at the moment, no changes/improvements are needed.

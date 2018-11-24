@@ -1,0 +1,229 @@
+package edu.wit.comp2000.TinWong.adt5;
+
+import java.util.ArrayList;
+
+/**
+ * HashTable implementation using seperate chaining Change K to String Change V
+ * to int to-do list: hashCode method
+ * 
+ * @author wongt1
+ *
+ * @param <K>
+ * @param <V>
+ */
+
+public class HashTable {
+
+	/**
+	 * private class of Node, (typical) private Node class for HashTable entry
+	 *
+	 * @param <K>
+	 * @param <V>
+	 */
+	@SuppressWarnings("hiding")
+	private class Node<String, Integer> {
+		private String key;
+		private Integer value;
+		private Node<String, Integer> next;
+
+		/**
+		 * constructor for node
+		 * 
+		 * @param key
+		 */
+		private Node(String key, Integer value) {
+			this(key, value, null);
+		}
+
+		/**
+		 * constructor for node
+		 * 
+		 * @param key
+		 * @param nextNode
+		 */
+		private Node(String key, Integer value, Node<String, Integer> nextNode) {
+			key = key;
+			next = nextNode;
+		}
+
+		/**
+		 * getter method for key
+		 * 
+		 * @return
+		 */
+		private Integer getValue() {
+			return this.value;
+		}
+
+		/**
+		 * getter method for value
+		 */
+		private String getKey() {
+			return this.key;
+		}
+
+		/**
+		 * setter method for data
+		 * 
+		 * @param newData
+		 */
+		private void setKey(String key) {
+			this.key = key;
+		}
+
+		private void setValue(Integer value) {
+			this.value = value;
+		}
+
+		/**
+		 * getter method for next node
+		 * 
+		 * @return
+		 */
+		private Node<String, Integer> getNextNode() {
+			return this.next;
+		}
+
+		/**
+		 * setter method for next node
+		 * 
+		 * @param nextNode
+		 */
+		private void setNextNode(Node<String, Integer> nextNode) {
+			this.next = nextNode;
+		}
+	}
+
+	/**
+	 * buckets are represented using an array of Node
+	 */
+	private Node<String, Integer>[] bucketList;
+
+	/**
+	 * Current capacity of array list
+	 */
+	private int numBuckets;
+
+	/**
+	 * Current numberOfEntries of array list
+	 */
+	private int numberOfEntries;
+
+	/**
+	 * counter for prime number resizing
+	 */
+	private int polynomialCounter;
+
+	/**
+	 * Constructor with a parameter for numBuckets
+	 * 
+	 * @param numBuckets
+	 */
+	public HashTable(int numBuckets) {
+		this.numBuckets = numBuckets;
+		numberOfEntries = 0;
+		bucketList = new Node[numBuckets];
+	}
+
+	/**
+	 * find the key for buckets
+	 * 
+	 * @param key
+	 * @return
+	 */
+	private int getHashIndex(String key) {
+		int hashCode = getHashCode(key);
+		return hashCode;
+
+	}
+
+	/**
+	 * my own hashCode method, sums eah char value then compressed to table size
+	 * 
+	 * @param str
+	 * @return
+	 */
+	private int getHashCode(String str) {
+		int sum = 0;
+
+		for (int i = 0; i < str.length(); i++) {
+			sum += str.charAt(i);
+		}
+
+		sum = sum % numBuckets;
+
+		return sum;
+	}
+
+	/**
+	 * retrieve the Node, if found return value if not return null
+	 * 
+	 * @param key
+	 * @return
+	 */
+	public Integer get(String key) {
+		// Find head of chain for given key
+		int bucketIndex = getHashIndex(key);
+
+		Node<String, Integer> head = bucketList[bucketIndex];
+
+		// Search key in chain
+		while (head != null) {
+			if (head.key.equals(key)) {
+				return head.getValue();
+			}
+			head = head.getNextNode();
+		}
+
+		// If key not found
+		return null;
+	}
+
+	/**
+	 * add a Node to the HashTable
+	 * 
+	 * @param key
+	 * @param value
+	 */
+	public Integer add(String key) {
+		// Find head of chain for given key
+		boolean found = false;
+		int bucketIndex = getHashIndex(key);
+		numberOfEntries++;
+		Node<String, Integer> head = bucketList[bucketIndex];
+
+		// head == null when its a one of a kind value
+		if (head == null) {
+			bucketList[bucketIndex] = head;
+			return null;
+		} else {
+			while (head != null) {
+				if (head.key.equals(key)) {
+					head.value++;
+					found = true;
+				}
+				head = head.next;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * uses the quadratic polynomial P(n) = n^2 + n + 41 can only go up to n =
+	 * 39, n = 40 is a square number (1681)
+	 * 
+	 * @param num
+	 * @return
+	 */
+	private void nextPrimeNumber() {
+		boolean prime = false;
+		while (!prime) {
+			this.numBuckets++;
+			if (this.numBuckets % 2 != 0 && this.numBuckets % 3 != 0 && this.numBuckets % 5 != 0
+					&& this.numBuckets % 7 != 0) {
+				prime = true;
+			}
+		}
+	}
+}

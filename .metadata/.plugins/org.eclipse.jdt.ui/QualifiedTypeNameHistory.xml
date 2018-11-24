@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.EmptyStackException"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.application3.Passenger"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.application3.Utilities.Logger"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.application3.Train"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.adt3.tools.ArrayQueue"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.application3.TrainRoute"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.application3.Direction"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.application3.Platform"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.application3.Station"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.lists.Utils.Card"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.lists.Enums.SUIT"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.lists.Utils.Hand"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.lists.Utils.Pile"/>
+<fullyQualifiedTypeName name="edu.wit.comp2000.group23.lists.Utils.Player"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSpinnerUI"/>
+</qualifiedTypeNameHistroy>

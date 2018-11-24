@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;edu.wit.comp2000.TinWong.adt5&apos;&#x0D;&#x0A;- Original project: &apos;edu.wit.comp2000.TinWong.adt5&apos;&#x0D;&#x0A;- Original element: &apos;edu.wit.comp2000.TinWong.adt5.HashedDictionary.java&apos;" description="Delete element" element1="/src&lt;edu.wit.comp2000.TinWong.adt5{HashedDictionary.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1480535543601" subPackages="false" version="1.0"/>
+</session>

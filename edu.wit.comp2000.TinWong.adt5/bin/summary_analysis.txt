@@ -1,0 +1,27 @@
+Analysis
+
+1). In general, the Hash Table data structure is extremely helpful. The Hash Table, if perfect, allows a O(1) search as it is key dependent. There are many other uses, as data scientists would use Hash Table to handle big data. O(n) would be devastating if dealing with big data, so O(1) is highly preferred if possible.
+
+
+2). Yes, we can use a parallel array which would use an array for key and another array for value. This is highly not preferred, as traversing would be very difficult and confusing.
+
+
+3). It cannot accept null key entries, as it would be impossible to find the hashcode for a null key entries. However, it can handle null key entries as that is the default when creating a new array of Nodes. However, it cannot handle nor accept null values. This is due to it being impossible to do anything with the hashcode if value is a null entry.
+
+
+4). 
+	a). The file size is smaller than hash table size, as there are many null entries in hash table where the file size would not print ut.
+	b). No, the hash table size should increase as you traverse through the file. This is an extremely sparse hash table.
+	c). There is no correlation between word frequency and chain length. As word frequency only involves changing the Node’s value and the chain length would stay as 1. We should not influence chain length, as that would waste a lot of memory/space.
+	d). The words are somewhat well disbursed, as 50% of the buckets are being used. The bigger the table, the less buckets it uses for the most part. 
+	e). A better hash code is how Java implements their hashcode, which is using a product sum algorithm with each char of the string. (Which is what my hash code does)
+	
+Summary 
+
+1). I had a lot of trouble with this assignment, as there was no source code in the book for this ADT implementation. I moved forward simply by grinding away at it.
+A lot of trial and errors and I eventually finished the assignment. No topics still confuse me.
+
+2). I learned everything there is to hashCode, how to make a distinct hashCode and how HashTables work. Separate chaining is somewhat easy to implement in, whereas double hashing
+seem a lot more difficult. 
+
+3). This assignment should have been assigned much earlier, as fitting this assignment in during pre-finals week was very depressing and heavy duty.
